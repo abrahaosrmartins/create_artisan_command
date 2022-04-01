@@ -4,7 +4,7 @@ This project has a main goal to create a make:service artisan command
 
 - Create ```Service.stub``` file and put in into a ```stubs``` folder outside ```app``` folder
 - Execute ``` php artisan make:command ServiceMakeCommand ``` and edit your class file as [this example](https://github.com/abrahaosrmartins/create_artisan_command/blob/main/app/Console/Commands/ServiceMakeCommand.php)
-- For Laravel 5 or below, register the command class in your ```app\Consol\Kernel.php```
+- For Laravel 5 or below, register the command class in your ```app\Console\Kernel.php```
 
 ```
 <?php
