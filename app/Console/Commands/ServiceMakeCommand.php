@@ -106,7 +106,13 @@ class ServiceMakeCommand extends GeneratorCommand
 
         $stub = parent::replaceClass($stub, $name);
 
-        return str_replace('DummyService', $this->service, $stub);
+        if (str_contains($this->service, '\\')) {
+            $serviceName = explode('\\', $this->service);
+        } elseif (str_contains($this->service, '/')) {
+            $serviceName = explode('/', $this->service);
+        }
+
+        return str_replace('DummyService', isset($serviceName) ? $serviceName[1] : $this->service, $stub);
     }
 
     /**
